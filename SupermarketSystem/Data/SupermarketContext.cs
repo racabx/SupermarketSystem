@@ -11,11 +11,22 @@ namespace SupermarketSystem.Data
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SaleItems { get; set; }
 
+        // Parameterless constructor used by the main app with SQL Server
+        public SupermarketContext() { }
+
+        // Constructor used by unit tests to inject in-memory database
+        public SupermarketContext(DbContextOptions<SupermarketContext> options)
+            : base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                "Server=localhost\\SQLEXPRESS;Database=SupermarketDB;Trusted_Connection=True;TrustServerCertificate=True;"
-            );
+            // Only configure SQL Server if no options were already provided
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(
+                    "Server=localhost\\SQLEXPRESS;Database=SupermarketDB;Trusted_Connection=True;TrustServerCertificate=True;"
+                );
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,7 +51,6 @@ namespace SupermarketSystem.Data
                 .WithMany()
                 .HasForeignKey(si => si.ProductId);
 
-            // Fix decimal precision warnings
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
