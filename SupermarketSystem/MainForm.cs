@@ -81,6 +81,7 @@ namespace SupermarketSystem
                 btnCategories, btnSales, btnReports, btnExit
             });
         }
+
         private void btnProducts_Click(object sender, EventArgs e)
         {
             // Open the products management screen
@@ -90,12 +91,16 @@ namespace SupermarketSystem
 
         private void btnSuppliers_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Suppliers screen coming soon!");
+            // Open supplier management screen
+            var form = new SupermarketSystem.Forms.SuppliersForm();
+            form.ShowDialog();
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Categories screen coming soon!");
+            // Open category management screen
+            var form = new SupermarketSystem.Forms.CategoriesForm();
+            form.ShowDialog();
         }
 
         private void btnSales_Click(object sender, EventArgs e)
