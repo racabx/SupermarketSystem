@@ -105,12 +105,16 @@ namespace SupermarketSystem
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sales screen coming soon!");
+            // Open the sales recording screen
+            var form = new SupermarketSystem.Forms.SalesForm();
+            form.ShowDialog();
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Reports screen coming soon!");
+            // Open the reports screen
+            var form = new SupermarketSystem.Forms.ReportsForm();
+            form.ShowDialog();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
