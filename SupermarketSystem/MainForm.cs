@@ -81,10 +81,11 @@ namespace SupermarketSystem
                 btnCategories, btnSales, btnReports, btnExit
             });
         }
-
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Products screen coming soon!");
+            // Open the products management screen
+            var form = new SupermarketSystem.Forms.ProductsForm();
+            form.ShowDialog();
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)
