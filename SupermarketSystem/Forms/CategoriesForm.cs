@@ -30,7 +30,7 @@ namespace SupermarketSystem.Forms
         private void SetupUI()
         {
             this.Text = "Manage Categories";
-            this.Size = new Size(480, 520);
+            this.Size = new Size(480, 560);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.WhiteSmoke;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -81,17 +81,17 @@ namespace SupermarketSystem.Forms
             };
 
             // Action buttons
-            btnAdd = CreateButton("➕ Add", new Point(20, 395), Color.FromArgb(60, 179, 113));
-            btnEdit = CreateButton("✏ Edit", new Point(145, 395), Color.FromArgb(70, 130, 180));
-            btnDelete = CreateButton("🗑 Delete", new Point(270, 395), Color.FromArgb(178, 34, 34));
-            btnBack = CreateButton("⬅ Back", new Point(20, 445), Color.FromArgb(100, 100, 100));
+            btnAdd = CreateButton("➕ Add", new Point(20, 410), Color.FromArgb(60, 179, 113));
+            btnEdit = CreateButton("✏ Edit", new Point(145, 410), Color.FromArgb(70, 130, 180));
+            btnDelete = CreateButton("🗑 Delete", new Point(270, 410), Color.FromArgb(178, 34, 34));
+            btnBack = CreateButton("⬅ Back", new Point(20, 460), Color.FromArgb(100, 100, 100));
 
             lblStatus = new Label
             {
                 Text = "",
                 Font = new Font("Segoe UI", 9),
                 ForeColor = Color.Green,
-                Location = new Point(145, 453),
+                Location = new Point(145, 468),
                 Size = new Size(300, 20)
             };
 

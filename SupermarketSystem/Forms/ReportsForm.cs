@@ -25,7 +25,7 @@ namespace SupermarketSystem.Forms
         private void SetupUI()
         {
             this.Text = "Reports";
-            this.Size = new Size(900, 620);
+            this.Size = new Size(900, 650);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.WhiteSmoke;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -40,11 +40,12 @@ namespace SupermarketSystem.Forms
                 Size = new Size(300, 35)
             };
 
-            // Tab control holds all report types as separate tabs
+            // Tab control holds all report types
+
             tabReports = new TabControl
             {
                 Location = new Point(20, 60),
-                Size = new Size(845, 490),
+                Size = new Size(845, 470),
                 Font = new Font("Segoe UI", 9)
             };
 
@@ -56,7 +57,7 @@ namespace SupermarketSystem.Forms
             btnBack = new Button
             {
                 Text = "⬅ Back",
-                Location = new Point(750, 558),
+                Location = new Point(750, 545),
                 Size = new Size(115, 36),
                 Font = new Font("Segoe UI", 9),
                 BackColor = Color.FromArgb(100, 100, 100),
@@ -92,7 +93,7 @@ namespace SupermarketSystem.Forms
                 Text = $"{lowStock.Count} product(s) are low in stock.",
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 ForeColor = lowStock.Count > 0 ? Color.Red : Color.Green,
-                Location = new Point(5, 435),
+                Location = new Point(5, 400),
                 Size = new Size(500, 22)
             };
 
@@ -120,7 +121,7 @@ namespace SupermarketSystem.Forms
                 Text = $"Total revenue: {sales.Sum(s => s.TotalAmount):£0.00}  |  {sales.Count} sale(s) recorded.",
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 ForeColor = Color.DimGray,
-                Location = new Point(5, 435),
+                Location = new Point(5, 400),
                 Size = new Size(700, 22)
             };
 
@@ -153,7 +154,7 @@ namespace SupermarketSystem.Forms
                 Text = $"{products.Count} product(s) across all categories.",
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 ForeColor = Color.DimGray,
-                Location = new Point(5, 435),
+                Location = new Point(5, 400),
                 Size = new Size(500, 22)
             };
 
@@ -188,7 +189,7 @@ namespace SupermarketSystem.Forms
                 Text = $"{products.Count} product(s) across all suppliers.",
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 ForeColor = Color.DimGray,
-                Location = new Point(5, 435),
+                Location = new Point(5, 400),
                 Size = new Size(500, 22)
             };
 
@@ -202,7 +203,7 @@ namespace SupermarketSystem.Forms
             var dgv = new DataGridView
             {
                 Location = new Point(5, 5),
-                Size = new Size(830, 425),
+                Size = new Size(830, 390),
                 ReadOnly = true,
                 AllowUserToAddRows = false,
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect,
