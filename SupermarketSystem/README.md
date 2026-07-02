@@ -83,3 +83,8 @@ SupermarketSystem.Tests/
 - **Sales Recording** — Basket based sales with automatic stock deduction.
 - **Low Stock Alerts** — Visual warnings when stock falls below threshold.
 - **Reports** — Four built-in reports: low stock, sales history, products by category, supplier stock.
+
+---
+
+## Video Demonstration
+The video demonstration file is included in this repository as Video.mp4
